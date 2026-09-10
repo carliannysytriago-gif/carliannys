@@ -1,47 +1,1090 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PROJETO INTEGRADOR</title>
+
+    <title>PROJETO INTEGRADOR 🚀</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #07111f;
+            color: #e2e8f0;
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           MENU
+        ========================= */
+
+        .menu {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 25px;
+
+            padding: 18px;
+
+            background: rgba(2, 6, 23, 0.95);
+            backdrop-filter: blur(10px);
+
+            border-bottom: 2px solid #38bdf8;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .menu a:hover {
+            color: #38bdf8;
+            transform: scale(1.1);
+        }
+
+
+        /* =========================
+           CAPA
+        ========================= */
+
+        .capa {
+            min-height: 85vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 40px 20px;
+
+            background:
+                radial-gradient(circle at top,
+                #164e63,
+                transparent 40%),
+
+                linear-gradient(
+                    135deg,
+                    #020617,
+                    #172554,
+                    #312e81
+                );
+        }
+
+        .capa-conteudo {
+            max-width: 900px;
+        }
+
+        .robot {
+            font-size: 90px;
+
+            animation:
+                flutuar 3s ease-in-out infinite;
+        }
+
+        .capa h1 {
+            font-size: clamp(42px, 8vw, 75px);
+
+            color: white;
+
+            text-shadow:
+                0 0 10px #38bdf8,
+                0 0 30px #38bdf8;
+
+            margin: 20px 0;
+        }
+
+        .capa h2 {
+            color: #7dd3fc;
+            font-size: 25px;
+        }
+
+        .capa p {
+            background: transparent;
+            border: none;
+            box-shadow: none;
+
+            font-size: 18px;
+        }
+
+
+        @keyframes flutuar {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+        }
+
+
+        /* =========================
+           SEÇÕES
+        ========================= */
+
+        section {
+            max-width: 1150px;
+            margin: auto;
+            padding: 80px 25px;
+        }
+
+
+        /* =========================
+           TÍTULOS
+        ========================= */
+
+        .titulo {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .titulo h2 {
+            font-size: 40px;
+            color: #38bdf8;
+
+            text-shadow:
+                0 0 10px rgba(56,189,248,0.4);
+        }
+
+        .linha {
+            width: 100px;
+            height: 4px;
+
+            margin: 12px auto;
+
+            border-radius: 10px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #38bdf8,
+                    #a855f7
+                );
+        }
+
+
+        /* =========================
+           CAIXAS DE TEXTO
+        ========================= */
+
+        .caixa {
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(30,41,59,0.95),
+                    rgba(15,23,42,0.95)
+                );
+
+            border: 1px solid #334155;
+
+            border-radius: 22px;
+
+            padding: 35px;
+
+            margin-bottom: 30px;
+
+            box-shadow:
+                0 15px 40px rgba(0,0,0,0.3);
+
+            transition: 0.4s;
+        }
+
+        .caixa:hover {
+            transform: translateY(-5px);
+
+            border-color: #38bdf8;
+
+            box-shadow:
+                0 20px 45px rgba(56,189,248,0.15);
+        }
+
+        .caixa p {
+            background: transparent;
+            border: none;
+            box-shadow: none;
+
+            padding: 0;
+
+            margin-bottom: 20px;
+        }
+
+        .caixa p:last-child {
+            margin-bottom: 0;
+        }
+
+
+        /* =========================
+           TÓPICOS
+        ========================= */
+
+        .topicos {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+
+            margin-top: 30px;
+        }
+
+        .topico {
+            background: #111827;
+
+            border: 1px solid #334155;
+
+            border-radius: 18px;
+
+            padding: 25px;
+
+            text-align: center;
+
+            transition: 0.4s;
+        }
+
+        .topico:hover {
+            transform: translateY(-8px);
+
+            border-color: #38bdf8;
+
+            box-shadow:
+                0 10px 30px
+                rgba(56,189,248,0.2);
+        }
+
+        .topico .icone {
+            font-size: 45px;
+        }
+
+        .topico h3 {
+            color: #38bdf8;
+            margin: 10px 0;
+        }
+
+        .topico p {
+            color: #94a3b8;
+        }
+
+
+        /* =========================
+           PROJETOS
+        ========================= */
+
+        .projetos {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 25px;
+        }
+
+        .projeto {
+            background: #111827;
+
+            border-radius: 20px;
+
+            padding: 25px;
+
+            border: 1px solid #334155;
+
+            transition: 0.4s;
+        }
+
+        .projeto:hover {
+            transform: translateY(-8px);
+
+            border-color: #8b5cf6;
+
+            box-shadow:
+                0 15px 35px
+                rgba(139,92,246,0.2);
+        }
+
+        .projeto h3 {
+            color: #a78bfa;
+            margin-bottom: 10px;
+        }
+
+        .projeto p {
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            padding: 0;
+        }
+
+
+        /* =========================
+           FOTOS
+        ========================= */
+
+        .projeto img {
+            width: 100%;
+            height: 230px;
+
+            object-fit: cover;
+
+            margin-top: 20px;
+
+            border-radius: 15px;
+
+            border: 2px solid #38bdf8;
+
+            box-shadow:
+                0 0 20px
+                rgba(56,189,248,0.25);
+
+            transition: 0.4s;
+        }
+
+        .projeto img:hover {
+            transform: scale(1.04);
+
+            box-shadow:
+                0 0 30px
+                rgba(56,189,248,0.6);
+        }
+
+
+        /* =========================
+           ROBÔ
+        ========================= */
+
+        .destaque {
+            text-align: center;
+
+            padding: 50px 30px;
+
+            margin-top: 40px;
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #172554,
+                    #312e81
+                );
+
+            border: 1px solid #6366f1;
+
+            box-shadow:
+                0 20px 50px
+                rgba(99,102,241,0.2);
+        }
+
+        .destaque .icone {
+            font-size: 80px;
+        }
+
+        .destaque h2 {
+            color: white;
+            margin: 15px;
+        }
+
+        .destaque p {
+            background: transparent;
+            border: none;
+            box-shadow: none;
+        }
+
+
+        /* =========================
+           TECNOLOGIAS
+        ========================= */
+
+        .tecnologias {
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 15px;
+        }
+
+        .tecnologia {
+            background: #1e293b;
+
+            border: 1px solid #38bdf8;
+
+            color: #7dd3fc;
+
+            padding: 12px 22px;
+
+            border-radius: 30px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .tecnologia:hover {
+            background: #38bdf8;
+
+            color: #082f49;
+
+            transform: scale(1.08);
+        }
+
+
+        /* =========================
+           RODAPÉ
+        ========================= */
+
+        footer {
+            text-align: center;
+
+            padding: 40px 20px;
+
+            background: #020617;
+
+            border-top: 1px solid #334155;
+
+            color: #64748b;
+        }
+
+        footer strong {
+            color: #38bdf8;
+        }
+
+
+        /* =========================
+           CELULAR
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            .topicos {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .projetos {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 550px) {
+
+            .menu {
+                gap: 12px;
+                font-size: 13px;
+            }
+
+            .capa h2 {
+                font-size: 20px;
+            }
+
+            .topicos {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 60px 15px;
+            }
+
+            .caixa {
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+
 </head>
+
+
 <body>
-    <h1>Biografia</h1>
-    <p> <p>Ao longo desse projeto, venho tendo a oportunidade de aprender, experimentar e descobrir novas formas de transformar ideias em projetos. Durante o 2º trimestre, participei das atividades que envolveram Robótica, Física, Tecnociência e Programação, contribuindo junto com meus colegas para o desenvolvimento dos trabalhos.
-Essa experiência tem me mostrado a importância de trabalhar em equipe, compartilhar ideias e aprender com os desafios que aparecem pelo caminho. Cada atividade representa uma oportunidade de desenvolver novos conhecimentos e também de descobrir minhas próprias habilidades.
-Este portfólio é uma forma de registrar não apenas os trabalhos realizados, mas também nossa participação nessa jornada juntos.</p>
-</p>
 
-         <h2>PROJETO INTEGRADOR</h2>
-         <p>Neste site, convidamos você a conhecer um pouco da nossa jornada durante o 2º trimestre do Projeto Integrador. 🚀
-Ao longo dessa experiência, unimos conhecimentos de Robótica, Física, Tecnociência e Programação, mostrando como diferentes áreas podem se conectar e trabalhar juntas para transformar ideias em projetos.
-Aqui, você poderá acompanhar nossos trabalhos, experiências, desafios e descobertas desenvolvidos durante as aulas. Cada atividade representa uma etapa do nosso aprendizado e contribui para a construção do nosso produto final.
-E o resultado de toda essa jornada está aqui: este site, criado para reunir e apresentar tudo o que aprendemos e produzimos ao longo do trimestre.
-Prepare-se para conhecer nossa jornada, nossas ideias e tudo o que fomos capazes de construir juntos! 🤖💡🚀</p>
 
-<h3>Robotica</h3>
-<p>## 🤖 Na disciplina de **Robótica**, aprendemos que transformar uma ideia em realidade envolve criatividade, lógica, testes e, muitas vezes, algumas tentativas até tudo funcionar. Durante este trimestre, colocamos a teoria em prática por meio da criação de diferentes **protótipos e circuitos**.
+    <!-- =========================
+         MENU
+    ========================= -->
 
-Ao longo das aulas, desenvolvemos projetos como o **Disco de Newton**, explorando conceitos de Física e o comportamento das cores; **LED Fade-In e Fade-Out**, trabalhando com a variação gradual da intensidade da luz; **LED RGB**, aprendendo a combinar diferentes cores; e um **semáforo de cruzamento para carros**, simulando o funcionamento de um sistema de sinalização.
+    <nav class="menu">
 
-Também desenvolvemos projetos utilizando sensores, como o **sensor de presença** e o **sensor de gás e fumaça**, entendendo como a tecnologia pode identificar diferentes condições do ambiente e responder a elas.
+        <a href="#inicio">🏠 Início</a>
 
-Para finalizar o trimestre, nosso próximo desafio será construir um **robô seguidor de linha**. 🤖🚗
+        <a href="#biografia">📖 Biografia</a>
 
-Cada protótipo foi uma oportunidade de aprender na prática, testar possibilidades, identificar erros e buscar soluções. Mais do que montar circuitos, a Robótica nos mostrou como **programação, eletrônica, criatividade e conhecimento podem se unir para transformar ideias em algo que realmente funciona.**
-</p>
-<h4>Física E Tecnociência</h4>
+        <a href="#projeto">🚀 Projeto</a>
 
-<h5>Programação</h5>
-<p>## 💻 Programação
+        <a href="#robotica">🤖 Robótica</a>
 
-Nas aulas de **Programação**, estamos aprendendo os primeiros passos para criar e desenvolver um site. Durante esse trimestre, conhecemos a linguagem **HTML**, entendendo como funciona a estrutura de uma página, seus elementos e a organização dos conteúdos.
+        <a href="#fisica">🔬 Física</a>
 
-Utilizamos o **Visual Studio Code (VS Code)** para escrever e organizar nossos códigos, colocando em prática tudo o que aprendemos durante as aulas. Aos poucos, fomos transformando linhas de código em uma página completa e interativa.
+        <a href="#programacao">💻 Programação</a>
 
-Como parte do nosso Projeto Integrador, estamos desenvolvendo **este site como produto final**, reunindo os trabalhos e experiências realizados durante o trimestre. Nosso objetivo é apresentar esse projeto na **Feira de Ciências**, mostrando não apenas o resultado final, mas também todo o processo de aprendizado e desenvolvimento por trás dele. 🚀💻
+    </nav>
 
-Essa experiência está nos ajudando a desenvolver **criatividade, lógica, organização e autonomia**, além de mostrar como a programação pode transformar uma ideia em algo real.
-</p>
+
+
+    <!-- =========================
+         CAPA
+    ========================= -->
+
+    <section class="capa" id="inicio">
+
+        <div class="capa-conteudo">
+
+            <div class="robot">
+                🤖
+            </div>
+
+            <h1>
+                PROJETO INTEGRADOR
+            </h1>
+
+            <h2>
+                🚀 Ciência • Tecnologia • Criatividade
+            </h2>
+
+            <p>
+                Uma jornada de aprendizado, experiências e descobertas.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         BIOGRAFIA
+    ========================= -->
+
+    <section id="biografia">
+
+        <div class="titulo">
+
+            <h2>📖 Biografia</h2>
+
+            <div class="linha"></div>
+
+        </div>
+
+
+        <div class="caixa">
+
+            <p>
+                Ao longo desse projeto, venho tendo a oportunidade de aprender,
+                experimentar e descobrir novas formas de transformar ideias em projetos.
+                Durante o 2º trimestre, participei das atividades que envolveram
+                Robótica, Física, Tecnociência e Programação, contribuindo junto com
+                meus colegas para o desenvolvimento dos trabalhos.
+            </p>
+
+            <p>
+                Essa experiência tem me mostrado a importância de trabalhar em equipe,
+                compartilhar ideias e aprender com os desafios que aparecem pelo caminho.
+                Cada atividade representa uma oportunidade de desenvolver novos
+                conhecimentos e também de descobrir minhas próprias habilidades.
+            </p>
+
+            <p>
+                Este portfólio é uma forma de registrar não apenas os trabalhos
+                realizados, mas também nossa participação nessa jornada juntos.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         PROJETO INTEGRADOR
+    ========================= -->
+
+    <section id="projeto">
+
+        <div class="titulo">
+
+            <h2>🚀 PROJETO INTEGRADOR</h2>
+
+            <div class="linha"></div>
+
+        </div>
+
+
+        <div class="caixa">
+
+            <p>
+                Neste site, convidamos você a conhecer um pouco da nossa jornada durante
+                o 2º trimestre do Projeto Integrador. 🚀
+            </p>
+
+            <p>
+                Ao longo dessa experiência, unimos conhecimentos de Robótica, Física,
+                Tecnociência e Programação, mostrando como diferentes áreas podem se
+                conectar e trabalhar juntas para transformar ideias em projetos.
+            </p>
+
+            <p>
+                Aqui, você poderá acompanhar nossos trabalhos, experiências, desafios
+                e descobertas desenvolvidos durante as aulas. Cada atividade representa
+                uma etapa do nosso aprendizado e contribui para a construção do nosso
+                produto final.
+            </p>
+
+            <p>
+                E o resultado de toda essa jornada está aqui: este site, criado para
+                reunir e apresentar tudo o que aprendemos e produzimos ao longo do trimestre.
+            </p>
+
+            <p>
+                Prepare-se para conhecer nossa jornada, nossas ideias e tudo o que fomos
+                capazes de construir juntos! 🤖💡🚀
+            </p>
+
+        </div>
+
+
+        <!-- TÓPICOS -->
+
+        <div class="topicos">
+
+            <div class="topico">
+
+                <div class="icone">🤖</div>
+
+                <h3>Robótica</h3>
+
+                <p>
+                    Protótipos, circuitos e sensores.
+                </p>
+
+            </div>
+
+
+            <div class="topico">
+
+                <div class="icone">⚡</div>
+
+                <h3>Física</h3>
+
+                <p>
+                    Conceitos científicos aplicados.
+                </p>
+
+            </div>
+
+
+            <div class="topico">
+
+                <div class="icone">🔬</div>
+
+                <h3>Tecnociência</h3>
+
+                <p>
+                    Ciência e tecnologia.
+                </p>
+
+            </div>
+
+
+            <div class="topico">
+
+                <div class="icone">💻</div>
+
+                <h3>Programação</h3>
+
+                <p>
+                    Criação e desenvolvimento do site.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         ROBÓTICA
+    ========================= -->
+
+    <section id="robotica">
+
+        <div class="titulo">
+
+            <h2>🤖 Robótica</h2>
+
+            <div class="linha"></div>
+
+        </div>
+
+
+        <div class="caixa">
+
+            <p>
+                Na disciplina de <strong>Robótica</strong>, aprendemos que transformar
+                uma ideia em realidade envolve criatividade, lógica, testes e, muitas
+                vezes, algumas tentativas até tudo funcionar. Durante este trimestre,
+                colocamos a teoria em prática por meio da criação de diferentes
+                <strong>protótipos e circuitos</strong>.
+            </p>
+
+            <p>
+                Ao longo das aulas, desenvolvemos projetos como o
+                <strong>Disco de Newton</strong>, explorando conceitos de Física e o
+                comportamento das cores; <strong>LED Fade-In e Fade-Out</strong>,
+                trabalhando com a variação gradual da intensidade da luz;
+                <strong>LED RGB</strong>, aprendendo a combinar diferentes cores;
+                e um <strong>semáforo de cruzamento para carros</strong>, simulando
+                o funcionamento de um sistema de sinalização.
+            </p>
+
+            <p>
+                Também desenvolvemos projetos utilizando sensores, como o
+                <strong>sensor de presença</strong> e o
+                <strong>sensor de gás e fumaça</strong>, entendendo como a tecnologia
+                pode identificar diferentes condições do ambiente e responder a elas.
+            </p>
+
+            <p>
+                Para finalizar o trimestre, nosso próximo desafio será construir um
+                <strong>robô seguidor de linha</strong>. 🤖🚗
+            </p>
+
+            <p>
+                Cada protótipo foi uma oportunidade de aprender na prática, testar
+                possibilidades, identificar erros e buscar soluções. Mais do que montar
+                circuitos, a Robótica nos mostrou como <strong>programação, eletrônica,
+                criatividade e conhecimento podem se unir para transformar ideias em
+                algo que realmente funciona.</strong>
+            </p>
+
+        </div>
+
+
+
+        <!-- PROJETOS + FOTOS -->
+
+        <div class="projetos">
+
+
+            <div class="projeto">
+
+                <h3>🌈 Disco de Newton</h3>
+
+                <p>
+                    Projeto relacionado ao estudo das cores e conceitos de Física.
+                </p>
+
+                <img
+                    src="disco-newton.jpg"
+                    alt="Foto do Disco de Newton"
+                >
+
+            </div>
+
+
+            <div class="projeto">
+
+                <h3>💡 LED Fade-In e Fade-Out</h3>
+
+                <p>
+                    Variação gradual da intensidade da luz.
+                </p>
+
+                <img
+                    src="led-fade.jpg"
+                    alt="Foto do projeto LED Fade-In e Fade-Out"
+                >
+
+            </div>
+
+
+            <div class="projeto">
+
+                <h3>🔴 LED RGB</h3>
+
+                <p>
+                    Combinação de diferentes cores utilizando LED RGB.
+                </p>
+
+                <img
+                    src="led-rgb.jpg"
+                    alt="Foto do projeto LED RGB"
+                >
+
+            </div>
+
+
+            <div class="projeto">
+
+                <h3>🚦 Semáforo</h3>
+
+                <p>
+                    Simulação de um sistema de sinalização para carros.
+                </p>
+
+                <img
+                    src="semaforo.jpg"
+                    alt="Foto do projeto semáforo"
+                >
+
+            </div>
+
+
+            <div class="projeto">
+
+                <h3>👋 Sensor de Presença</h3>
+
+                <p>
+                    Utilização de sensores para identificar presença e movimento.
+                </p>
+
+                <img
+                    src="sensor-presenca.jpg"
+                    alt="Foto do sensor de presença"
+                >
+
+            </div>
+
+
+            <div class="projeto">
+
+                <h3>🔥 Sensor de Gás e Fumaça</h3>
+
+                <p>
+                    Projeto utilizando sensores para identificar condições do ambiente.
+                </p>
+
+                <img
+                    src="sensor-gas.jpg"
+                    alt="Foto do sensor de gás e fumaça"
+                >
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ROBÔ -->
+
+        <div class="destaque">
+
+            <div class="icone">
+                🤖🚗
+            </div>
+
+            <h2>
+                Robô Seguidor de Linha
+            </h2>
+
+            <p>
+                Para finalizar o trimestre, nosso próximo desafio será construir
+                um robô seguidor de linha.
+            </p>
+
+            <br>
+
+            <img
+                src="robo.jpg"
+                alt="Foto do robô seguidor de linha"
+                style="
+                    width:90%;
+                    max-width:600px;
+                    border-radius:20px;
+                    border:3px solid #38bdf8;
+                "
+            >
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FÍSICA E TECNOCIÊNCIA
+    ========================= -->
+
+    <section id="fisica">
+
+        <div class="titulo">
+
+            <h2>🔬 Física E Tecnociência</h2>
+
+            <div class="linha"></div>
+
+        </div>
+
+
+        <div class="caixa">
+
+            <div class="destaque">
+
+                <div class="icone">
+                    ⚛️🔬
+                </div>
+
+                <h2>
+                    Física + Tecnociência
+                </h2>
+
+                <p>
+                    Ciência, tecnologia e experimentação.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         PROGRAMAÇÃO
+    ========================= -->
+
+    <section id="programacao">
+
+        <div class="titulo">
+
+            <h2>💻 Programação</h2>
+
+            <div class="linha"></div>
+
+        </div>
+
+
+        <div class="caixa">
+
+            <p>
+                Nas aulas de <strong>Programação</strong>, estamos aprendendo os
+                primeiros passos para criar e desenvolver um site. Durante esse
+                trimestre, conhecemos a linguagem <strong>HTML</strong>, entendendo
+                como funciona a estrutura de uma página, seus elementos e a
+                organização dos conteúdos.
+            </p>
+
+            <p>
+                Utilizamos o <strong>Visual Studio Code (VS Code)</strong> para
+                escrever e organizar nossos códigos, colocando em prática tudo o
+                que aprendemos durante as aulas. Aos poucos, fomos transformando
+                linhas de código em uma página completa e interativa.
+            </p>
+
+            <p>
+                Como parte do nosso Projeto Integrador, estamos desenvolvendo
+                <strong>este site como produto final</strong>, reunindo os trabalhos
+                e experiências realizados durante o trimestre. Nosso objetivo é
+                apresentar esse projeto na <strong>Feira de Ciências</strong>,
+                mostrando não apenas o resultado final, mas também todo o processo
+                de aprendizado e desenvolvimento por trás dele. 🚀💻
+            </p>
+
+            <p>
+                Essa experiência está nos ajudando a desenvolver
+                <strong>criatividade, lógica, organização e autonomia</strong>,
+                além de mostrar como a programação pode transformar uma ideia
+                em algo real.
+            </p>
+
+        </div>
+
+
+
+        <!-- TECNOLOGIAS -->
+
+        <div class="titulo">
+
+            <h2>⚙️ Tecnologias utilizadas</h2>
+
+            <div class="linha"></div>
+
+        </div>
+
+
+        <div class="tecnologias">
+
+            <div class="tecnologia">
+                HTML
+            </div>
+
+            <div class="tecnologia">
+                CSS
+            </div>
+
+            <div class="tecnologia">
+                VS Code
+            </div>
+
+            <div class="tecnologia">
+                🤖 Robótica
+            </div>
+
+            <div class="tecnologia">
+                💡 LEDs
+            </div>
+
+            <div class="tecnologia">
+                📡 Sensores
+            </div>
+
+            <div class="tecnologia">
+                ⚡ Eletrônica
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FINAL
+    ========================= -->
+
+    <footer>
+
+        <p>
+            🚀 <strong>PROJETO INTEGRADOR</strong>
+        </p>
+
+        <p>
+            Robótica • Física • Tecnociência • Programação
+        </p>
+
+        <p>
+            Desenvolvido durante o 2º trimestre.
+        </p>
+
+    </footer>
+
+
 </body>
+
 </html>
