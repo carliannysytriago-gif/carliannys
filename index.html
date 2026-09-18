@@ -1,4 +1,3 @@
-E html>
 <html lang="pt-br">
 
 <head>
@@ -660,6 +659,56 @@ E html>
             transform: scale(1.08);
         }
 
+
+        /* =========================
+           GALERIA DE FÍSICA E TECNOCIÊNCIA
+        ========================= */
+
+        .galeria-fisica {
+            margin-top: 35px;
+        }
+
+        .galeria-fisica-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .imagem-fisica {
+            background: #111827;
+            border: 1px solid #334155;
+            border-radius: 20px;
+            padding: 20px;
+            transition: 0.4s;
+        }
+
+        .imagem-fisica:hover {
+            transform: translateY(-8px);
+            border-color: #38bdf8;
+            box-shadow: 0 15px 35px rgba(56,189,248,0.2);
+        }
+
+        .imagem-fisica img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+            border-radius: 15px;
+            border: 2px solid #38bdf8;
+            box-shadow: 0 0 20px rgba(56,189,248,0.2);
+            transition: 0.4s;
+        }
+
+        .imagem-fisica img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 30px rgba(56,189,248,0.5);
+        }
+
+        @media (max-width: 850px) {
+            .galeria-fisica-grid {
+                grid-template-columns: 1fr;
+            }
+        }
 
         /* =========================
            RODAPÉ
@@ -1413,6 +1462,55 @@ E html>
 
 
 
+        <!-- =========================
+             GALERIA DE FÍSICA E TECNOCIÊNCIA
+        ========================= -->
+
+        <div class="galeria-fisica">
+
+            <div class="titulo">
+                <h2>📸 Registros de Física e Tecnociência</h2>
+                <div class="linha"></div>
+            </div>
+
+            <div class="galeria-fisica-grid">
+
+                <div class="imagem-fisica">
+                    <img src="1.jpg" alt="Imagem 1 - Física e Tecnociência">
+                </div>
+
+                <div class="imagem-fisica">
+                    <img src="2.jpg" alt="Imagem 2 - Física e Tecnociência">
+                </div>
+
+                <div class="imagem-fisica">
+                    <img src="3.jpg" alt="Imagem 3 - Física e Tecnociência">
+                </div>
+
+                <div class="imagem-fisica">
+                    <img src="4.jpg" alt="Imagem 4 - Física e Tecnociência">
+                </div>
+
+                <div class="imagem-fisica">
+                    <img src="5.jpg" alt="Imagem 5 - Física e Tecnociência">
+                </div>
+
+                <div class="imagem-fisica">
+                    <img src="6.jpg" alt="Imagem 6 - Física e Tecnociência">
+                </div>
+
+                <div class="imagem-fisica">
+                    <img src="7.jpg" alt="Imagem 7 - Física e Tecnociência">
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
     <!-- =========================
          PROGRAMAÇÃO
     ========================= -->
@@ -1538,4 +1636,3 @@ E html>
 </body>
 
 </html>
-
